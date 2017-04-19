@@ -7,15 +7,86 @@
     tools:context="com.example.pc.shindigz11.LoginActivity">
 
     <EditText
-        android:id="@+id/titleText"
+        android:id="@+id/passwordField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:width="350dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="ShinDigz"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/bLogin"
+        app:layout_constraintRight_toRightOf="@+id/emailField"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="26dp"
+        app:layout_constraintLeft_toLeftOf="@+id/emailField" />
+
+    <EditText
+        android:id="@+id/titleView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:ems="10"
+        android:inputType="text"
+        android:singleLine="false"
+        android:text="@string/title"
         android:textAlignment="center"
         android:textIsSelectable="false"
         android:textSize="36sp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="137dp" />
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="100dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/emailField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="350dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/passwordField"
+        android:layout_marginStart="17dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="17dp" />
+
+    <Button
+        android:id="@+id/bLogin"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="350dp"
+        android:onClick="onClick"
+        android:text="@string/loginButton"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/passwordField"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="97dp"
+        app:layout_constraintLeft_toLeftOf="@+id/passwordField" />
+
+    <TextView
+        android:id="@+id/registerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/bLogin"
+        app:layout_constraintHorizontal_bias="0.683"
+        app:layout_constraintVertical_bias="0.671" />
 </android.support.constraint.ConstraintLayout>
