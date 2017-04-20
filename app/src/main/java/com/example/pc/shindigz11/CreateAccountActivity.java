@@ -7,13 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import org.w3c.dom.Text;
-
 public class CreateAccountActivity extends AppCompatActivity implements View.OnClickListener {
 
-    EditText password, email, confirmPass;
-    Button login;
-    String emailText, passwordText, confirmPassText;
+    EditText mEditTextPassword, mEditTextEmail, mEditTextConfirmPass;
+    Button mLogin;
+    String mEmailText, mPasswordText, mConfirmPassText;
     Intent intent;
 
     @Override
@@ -21,36 +19,39 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
-        password = (EditText) findViewById(R.id.newPasswordField);
-        email = (EditText) findViewById(R.id.newEmailField);
-        confirmPass = (EditText) findViewById(R.id.ConfirmPassField);
-        login = (Button) findViewById(R.id.bConfirm);
+        mEditTextPassword = (EditText) findViewById(R.id.newPasswordField);
+        mEditTextEmail = (EditText) findViewById(R.id.newEmailField);
+        mEditTextConfirmPass = (EditText) findViewById(R.id.ConfirmPassField);
+        mLogin = (Button) findViewById(R.id.bConfirm);
 
-        emailText = email.getText().toString();
-        passwordText = password.getText().toString();
-        confirmPassText = confirmPass.getText().toString();
-
-        public final boolean isValidEmail(String emailText) {
-
-       if (emailText != null && android.util.Patterns.EMAIL_ADDRESS.matcher(emailText).matches())
-       {
-           return true;
-       }
-       else
-       {
-         email   (getResources().getString(R.string.email_error));
-       }
-
-
-
-
-
+        mEmailText = mEditTextEmail.getText().toString();
+        mPasswordText = mEditTextPassword.getText().toString();
+        mConfirmPassText = mEditTextConfirmPass.getText().toString();
     }
+
+    public final boolean isValidEmail(String isGoodEmail) {
+        if (isGoodEmail!= null && android.util.Patterns.EMAIL_ADDRESS.matcher(mEmailText).matches())
+        {
+            return true;
+        } else {
+            mEditTextEmail.setError(getResources().getString(R.string.email_error));
+            return false;
+        }
+    }
+
+   /* public final boolean isValidPassword(String isGoodPassword, String isGoodConPassword) {
+
+
+    }*/
 
     @Override
     public void onClick(View v) {
 
-        if (email, password, )
+        //if (isValidEmail(mEmailText) && isValidPassword(mPasswordText, mConfirmPassText)) {
+
         }
-    }
+
 }
+
+
+
