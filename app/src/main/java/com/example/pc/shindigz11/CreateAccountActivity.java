@@ -30,7 +30,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     }
 
     public final boolean isValidEmail(String isGoodEmail) {
-        if (isGoodEmail!= null && android.util.Patterns.EMAIL_ADDRESS.matcher(mEmailText).matches())
+        if (isGoodEmail!= null && android.util.Patterns.EMAIL_ADDRESS.matcher(isGoodEmail).matches())
         {
             return true;
         } else {
@@ -39,10 +39,24 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         }
     }
 
-   /* public final boolean isValidPassword(String isGoodPassword, String isGoodConPassword) {
+    public final boolean isValidPassword(String isGoodPassword, String isGoodConPassword) {
 
+        if (isGoodPassword == isGoodConPassword) {
 
-    }*/
+            if (isGoodPassword != null && isGoodPassword.length() > 8) {
+                return true;
+            }
+            else {
+                mEditTextPassword.setError(getResources().getString(R.string.bad_password));
+                return false;
+            }
+
+        }
+        else {
+            mEditTextPassword.setError(getResources().getString(R.string.non_matching_pass));
+            return false;
+        }
+    }
 
     @Override
     public void onClick(View v) {
