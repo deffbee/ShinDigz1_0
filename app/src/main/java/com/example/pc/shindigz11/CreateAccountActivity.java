@@ -15,7 +15,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     Button mLogin;
     String mEmailText, mPasswordText, mConfirmPassText;
     Intent intent;
-    Context context = getApplicationContext();
+    Context context = this;
     CharSequence text = "Check for errors!";
     int duration = Toast.LENGTH_SHORT;
 
@@ -41,7 +41,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         {
             return true;
         } else {
-            mEditTextEmail.setError(getResources().getString(R.string.email_error));
+            mEditTextEmail.setError(getString(R.string.email_error));
             return false;
         }
     }
@@ -54,13 +54,13 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
                 return true;
             }
             else {
-                mEditTextPassword.setError(getResources().getString(R.string.bad_password));
+                mEditTextPassword.setError(getString(R.string.bad_password));
                 return false;
             }
 
         }
         else {
-            mEditTextPassword.setError(getResources().getString(R.string.non_matching_pass));
+            mEditTextPassword.setError(getString(R.string.non_matching_pass));
             return false;
         }
     }
