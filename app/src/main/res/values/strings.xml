@@ -11,4 +11,5 @@
     <string name="email_error">Please enter a valid email.</string>
     <string name="non_matching_pass">Passwords do not match!</string>
     <string name="bad_password">Incorrect password format</string>
+    <string name="new_acct_toast">Something went wrong check your credentials</string>
 </resources>

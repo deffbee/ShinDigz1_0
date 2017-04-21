@@ -1,11 +1,13 @@
 package com.example.pc.shindigz11;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class CreateAccountActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -13,6 +15,11 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     Button mLogin;
     String mEmailText, mPasswordText, mConfirmPassText;
     Intent intent;
+    Context context = getApplicationContext();
+    CharSequence text = "Check for errors!";
+    int duration = Toast.LENGTH_SHORT;
+
+    Toast toast = Toast.makeText(context, text, duration);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +68,14 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View v) {
 
-        //if (isValidEmail(mEmailText) && isValidPassword(mPasswordText, mConfirmPassText)) {
-
+        if (isValidEmail(mEmailText) && isValidPassword(mPasswordText, mConfirmPassText)) {
+            intent = new Intent(this, NewProfileActivity.class);
+            this.startActivity(intent);
+        }
+        else
+        {
+            toast.show();
+        }
         }
 
 }
