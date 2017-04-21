@@ -7,12 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+//This is the Launcher Activity
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    EditText passwordText, emailText;
-    TextView  title, register;
-    Button login;
+    EditText mEditTextPassword, mEditTextEmail;
+    TextView mTextViewTitle, mTextViewRegister;
+    Button mButtonLogin;
+    Intent intent;
     String email, password;
 
 
@@ -23,14 +24,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        title = (TextView) findViewById(R.id.titleView);
-        emailText = (EditText) findViewById(R.id.emailField);
-        passwordText = (EditText) findViewById(R.id.passwordField);
-        login = (Button) findViewById(R.id.bLogin);
-        register = (TextView) findViewById(R.id.registerText);
+        mTextViewTitle = (TextView) findViewById(R.id.titleView);
+        mEditTextEmail = (EditText) findViewById(R.id.emailField);
+        mEditTextPassword = (EditText) findViewById(R.id.passwordField);
+        mButtonLogin = (Button) findViewById(R.id.bLogin);
+        mTextViewRegister = (TextView) findViewById(R.id.registerText);
 
-        email = emailText.getText().toString();
-        password = passwordText.getText().toString();
+        //assigning input email/password text to string value
+        email = mEditTextEmail.getText().toString();
+        password = mEditTextPassword.getText().toString();
 
     }
 
@@ -41,10 +43,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()){
 
             case R.id.registerText:
-                Intent intent = new Intent(this,CreateAccountActivity.class);
-                    this.startActivity(intent);
+                intent = new Intent(this, CreateAccountActivity.class);
+                this.startActivity(intent);
                 break;
             case R.id.bLogin:
+                break;
         }
     }
 }

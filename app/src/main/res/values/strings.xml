@@ -6,7 +6,7 @@
     <string name="validEmail">Enter a valid E-mail address</string>
     <string name="loginButton">Login</string>
     <string name="email">E-mail</string>
-    <string name="register">New to ShinDigz? Click here to create an account.</string>
+    <string name="register">New to ShinDigz? Click here!</string>
     <string name="title">ShinDigz</string>
     <string name="email_error">Please enter a valid email.</string>
     <string name="non_matching_pass">Passwords do not match!</string>
