@@ -18,6 +18,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     Context context = this;
     CharSequence text = "Check for errors!";
     int duration = Toast.LENGTH_SHORT;
+    int y = 2;
 
     Toast toast = Toast.makeText(context, text, duration);
 
